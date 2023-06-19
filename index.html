@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+ <!-- Per insertar Codi, podeu utilitzar http://hilite.me/ -->
+    <head>
+        <title>Data Viz. Big Data UAB</title>
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+        <!-- Si voleu canviar la font o algun altre paràmetre, ho podeu fer aquí, o al CSS -->
+        <style>
+            body {
+                background-color: white;
+            }
+            .container {
+                max-width: 1100px;
+            }
+            h1, h2, h3, h4, h5, p {
+                color:black;
+            }
+            a:link {
+                color:brown;
+            }
+            a:visited {
+                color: #555a5e;
+            }
+            center img{
+                margin: 0 auto;
+                max-width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+            <p>Autores: Roger Bach i Eric Puig</p>
+            </header>
+                <h1>Estudi Sonar 2023</h1>
+                <p>Aquest estudi ha estat desenvolupat per Roger Bach i Eric Puig, dos alumnes d'últim curs de Comunicació Interactiva de la Universitat Autònoma de Barcelona. </p>
+		<h3>Motivació o interés</h3>
+		<p> La finalitat d'aquest estudi ve per l'interès a parts iguals dels integrants d'aquest grup amb la música electrònica. 
+			La setmana del 15 de juny té lloc el Festival Sonar on s'hi celebra el 30è aniversari i, per altra banda, 
+			la <i>OFFwekk</i> una setmana dedicada a la música electrònica a la ciutat de Barcelona on hi tindra lloc diversos festivals i festes de música 
+			electrònica com Brunch, Row, NOART, CIRCOLOCO, Afterlive, entre d'altres. <br> 
+			Aquest estudi té la finalitat de relacionar els artistes que participen al Sónar 2023 en base 
+			a una sèrie de variables que s'han extret de les principals cançons dels artistes publicades a Spotify.
+			Mitjançant aquest anàlisis volem proporcionar informació qualitativa a l'usuari en base als seus gustos músicals dins del gènere de l'electrònica i
+			que aquest pugui definir el seu horari preferit sense la necessitat de conèixer tots els artistes que participen al festival.
+		</p>
+                <h2>Obtenció de dades</h2>
+		<p>Per a l'obtenció de dades d'aquest estudi hem utilitzat el llenguatge Python i l'API Spotipy per extreure les dades de les primeres 10 cançons 
+			que ens oferia la llibreria sobre l'artista. A partir d'aquestes hem extret una sèrie de variables com 
+		<ul>Danceability, calculem la mitjana sobre un valor de 0 a 1, on 0 representa u</ul>
+		<ul>Valance, en una mitjana de 0 a 1 que identifica si la música és d'una tonalitat més alegre (1) o més trista (0)</ul> 
+		<ul>Loudness, on es mesura la mitjana de decibels de l'artista</ul>
+		<ul>Tempo, on es mesura la mitjana de BPMs de l'artista</ul>
+		<ul>Key</ul>
+		<ul>Instrumentalness, ens mostra si les cançons de l'artista són sense veu (1) o amb recursos vocals (0)</ul>
+		<ul>Acousticness, ens marca si les cançons de l'artista són acústiques en base a una mitjana de 0, molt poc acústica, o 1, molt acustica</ul>
+		<ul>Energy, una variable que mesura la intensitat i activitat de les cançons de l'artista. </ul>
+
+<br><b>Enllaç al repositori de codi</b></p>
+                <!-- Exemple de Fragment de codi generat amb http://hilite.me/ -->
+                <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #f92672">import</span> <span style="color: #f8f8f2">capturer.crawler</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">c</span>
+			<span style="color: #f92672">import</span> <span style="color: #f8f8f2">export</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">e</span>
+			<span style="color: #f8f8f2">queries</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;coronavirus&quot;</span><span style="color: #f8f8f2">]</span> <span style="color: #75715e"># You can use this as a list</span>
+			<span style="color: #f8f8f2">max_results</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span> <span style="color: #75715e">## Nº of results in search</span>
+			<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">main</span><span style="color: #f8f8f2">(q,</span> <span style="color: #f8f8f2">max_results):</span>
+	                <span style="color: #f8f8f2">videos</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">explore_videos(q,</span> <span style="color: #f8f8f2">max_results)</span>
+        	        <span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">export_data(videos,</span> <span style="color: #f8f8f2">q)</span>
+			<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;__main__&quot;</span><span style="color: #f8f8f2">:</span>
+			<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">q</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">queries:</span>
+			<span style="color: #f8f8f2">main(q,</span> <span style="color: #f8f8f2">max_results)</span>
+		</pre></div>
+    <!-- Fi Fragment de codi -->
+		
+		<h2>Proessament i combinació de dades</h2>
+		<p>En aquest gràfic analitzem dues variables a la vegada: Tempo i Loudness. Volem conèixer quina relació existeix entre les dues variables.
+			Podem veure com apareix una línia decreixent en base al tempo (BPM) de la mitjana de cançons de l’artista analitzada. Situant en primer lloc 
+			l’artista GEST amb 160 BPM, seguit per Sherelle amb 158 BPM i Aquarian 156. En canvi, a la cua de hi trobem Daito Manabe amb 71 BPM situant-se 
+			com l’artista amb el tempo més lent de tot el festival del Sònar. A la posició anterior hi trobem Joni amb 102 BPM.
+
+			<br>Aquí s’analitza la Danceability i el Valance, atès que es vol demostrar que com més ballable sigui una canço, una tonalitat més alegre té. 
+			Tot i que amb el primer i el segon artista amb més dancebality no correspongui un Valance alegre, sí que existeix una tendència que confirma la
+			hipòtesis. A la cua del gràfic podem veure que els artistes amb una danceability menor presenten un valance amb tendència a 0.
+			
+			<br>Amb el gràfic on analitzem la Key hem s’han agrupat els artistes en base …
+			
+			<br>Amb la variable Instrumentalness hem agrupat els artistes per la seva instrumentalitat amb les seves cançons. 
+			Podem veure que el festival ofereix una oferta variada de música dins del gènere de música electrònica. Trobem artistes que 
+			destaquen per l’ús de vocals dins les seves cançons com Samantha Hudson, La Zowi, Bad Gyal, Orslok, entre d’altres. Aquests artistes 
+			amb una instrumentalitat de valor 0 o quasi 0. En canvi, amb els artistes del principi del gràfic trobem artistes com Edit Select, Max Cooper 
+			o Clara Aguilar que destaquen per una música sense lletra.
+			
+			<br>Per acabar, analitzem l’acousticness  i l’energia dels artistes mitjançant un promig de cada un dels valors. En aquest cas, el valor 
+			acústic de l’artista es representa a l’eix de les y, mentre que l’energia l’analitzem amb la intensitat del color de la barra de l’artista. 
+			Podem apreciar que com més acústica és la canço, menys energia té. Hi ha una tendència cap a la cua del gràfic on hi ha un conjunt d’artistes 
+			amb unes produccions molt processades i amb molta energia.</p>
+		
+		<h2>El Dataset</h2>		
+    <!-- Ejemplo de codigo de Grafico incrustado-->
+		<script type='module' src='https://eu-west-1a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script><tableau-viz id='tableau-viz' src='https://eu-west-1a.online.tableau.com/t/treballfinalsonar/views/AnalisisSonar/TempoiLoudness' width='1707' height='887' hide-tabs toolbar='bottom' ></tableau-viz>
+			<div class='tableauPlaceholder' id='viz1681300013018' style='position: relative'><noscript><a href='#'><img alt='Prmedio de streamers por dia ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pr&#47;promstreamersdia&#47;Prmediodestreamerspordia&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='promstreamersdia&#47;Prmediodestreamerspordia' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pr&#47;promstreamersdia&#47;Prmediodestreamerspordia&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1681300013018');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+		<p>Interpretació del datasat</p>
+
+		<h2>Conclusió</h2>
+		<p>Text de conclusió</p>
+                       
+            <footer>
+			<hr>
+			<p>
+Roger Bach <br> Eric Puig            </p>
+
+			</footer>
+		</div>
+	</body>
+</html>
